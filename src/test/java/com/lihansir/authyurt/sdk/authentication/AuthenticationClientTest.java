@@ -1,18 +1,14 @@
 package com.lihansir.authyurt.sdk.authentication;
 
-import cn.hutool.core.date.LocalDateTimeUtil;
 import cn.hutool.core.lang.Assert;
 import com.lihansir.authyurt.sdk.common.TestCommonConstant;
-import com.lihansir.authyurt.sdk.model.*;
 import com.lihansir.authyurt.sdk.enums.ResponseType;
 import com.lihansir.authyurt.sdk.enums.VerificationCodePlatform;
 import com.lihansir.authyurt.sdk.enums.VerificationCodeType;
+import com.lihansir.authyurt.sdk.model.*;
 import com.lihansir.authyurt.sdk.modules.authentication.AuthenticationClient;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.time.LocalDateTime;
-import java.util.Date;
 
 /**
  * 认证客户端测试
@@ -132,13 +128,6 @@ public class AuthenticationClientTest {
         String accessToken = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwODAvaWRhYXMvb2lkYyIsInN1YiI6IjE1MjIxNTM4MTMyMTIwMDg0NDgiLCJhdWQiOiIxNTIyMTQ4MDY1NTY4NDkzNTY4IiwiZXhwIjoxNjUxODAxMzM0LCJpYXQiOjE2NTE3NTgxMzQsIm5vbmNlIjoibm9uY2UiLCJzY29wZSI6ImVtYWlsIiwidXNlcm5hbWUiOiJ0ZXN0In0.onnLLEcbxXh-1MZbt5sg_sX_breqVUQZ1RIxvZ8n6g0NwQZq-vHEWXk02OhH3QxzAMcaPl3BD9A3CRCEOj9KjPR_Zc8Bgg70Sk5z397hbaE72N55cv9lwC_q7DF_qWBgRSPtG7HnrMSjikv4cOJKKYz6HVyZo9EjhX65B6Xyxd4";
         User user = this.authenticationClient.oidcUserInfo(accessToken);
         Assert.notBlank(user.getId());
-    }
-
-    @Test
-    public void test() {
-        Date date = new Date();
-        LocalDateTime of = LocalDateTimeUtil.of(1651801334L);
-        System.out.println(date.getTime() + 3600 * 1000);
     }
 
 }
