@@ -1,12 +1,12 @@
 ## 认证客户端 AuthenticationClient
 
-### 用户名密码登录
+### 账户密码登录
 
 ```java
 AuthenticationClient authenticationClient = new AuthenticationClient();
 authenticationClient.setUserPoolId("USER_POOL_ID");
 authenticationClient.setApplicationId("APPLICATION_ID");
-AuthenticationResult authenticationResult = authenticationClient.loginByUsername(new LoginByUsernameParam("test", "test"));
+AuthenticationResult authenticationResult = authenticationClient.loginByAccount(new LoginByAccountParam("test", "test"));
 ```
 
 ### LDAP 登录
@@ -16,15 +16,6 @@ AuthenticationClient authenticationClient = new AuthenticationClient();
 authenticationClient.setUserPoolId("USER_POOL_ID");
 authenticationClient.setApplicationId("APPLICATION_ID");
 AuthenticationResult authenticationResult = authenticationClient.loginByLdap(new LoginByLdapParam("test", "test"));
-```
-
-### 邮箱密码登录
-
-```java
-AuthenticationClient authenticationClient = new AuthenticationClient();
-authenticationClient.setUserPoolId("USER_POOL_ID");
-authenticationClient.setApplicationId("APPLICATION_ID");
-AuthenticationResult authenticationResult = authenticationClient.LoginByEmailParam(new LoginByEmailParam("test@lihansir.com", "test"));
 ```
 
 ### 邮箱验证码登录
@@ -43,15 +34,6 @@ AuthenticationClient authenticationClient = new AuthenticationClient();
 authenticationClient.setUserPoolId("USER_POOL_ID");
 authenticationClient.setApplicationId("APPLICATION_ID");
 AuthenticationResult authenticationResult = authenticationClient.loginByPhoneCode(new LoginByPhoneCodeParam("13188888888", "1234"));
-```
-
-### 手机号密码登录
-
-```java
-AuthenticationClient authenticationClient = new AuthenticationClient();
-authenticationClient.setUserPoolId("USER_POOL_ID");
-authenticationClient.setApplicationId("APPLICATION_ID");
-AuthenticationResult authenticationResult = authenticationClient.loginByPhonePassword(new LoginByPhonePasswordParam("13188888888", "test"));
 ```
 
 ### 用户名注册

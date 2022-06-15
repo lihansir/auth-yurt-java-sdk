@@ -28,21 +28,14 @@ public class AuthenticationClientTest {
     }
 
     @Test
-    public void loginByUsername() {
-        AuthenticationResult authenticationResult = this.authenticationClient.loginByUsername(new LoginByUsernameParam("test", "test"));
+    public void loginByAccount() {
+        AuthenticationResult authenticationResult = this.authenticationClient.loginByAccount(new LoginByAccountParam("test", "test"));
         Assert.notBlank(authenticationResult.getAccessToken());
     }
 
     @Test
     public void loginByLdap() {
         AuthenticationResult authenticationResult = this.authenticationClient.loginByLdap(new LoginByLdapParam("test", "test"));
-        Assert.notBlank(authenticationResult.getAccessToken());
-    }
-
-    @Test
-    public void loginByEmail() {
-        AuthenticationResult authenticationResult = this.authenticationClient.loginByEmail(
-                new LoginByEmailParam("test@lihansir.com", "test"));
         Assert.notBlank(authenticationResult.getAccessToken());
     }
 
@@ -57,13 +50,6 @@ public class AuthenticationClientTest {
     public void loginByPhoneCode() {
         AuthenticationResult authenticationResult = this.authenticationClient.loginByPhoneCode(
                 new LoginByPhoneCodeParam("13188888888", "1234"));
-        Assert.notBlank(authenticationResult.getAccessToken());
-    }
-
-    @Test
-    public void loginByPhonePassword() {
-        AuthenticationResult authenticationResult = this.authenticationClient.loginByPhonePassword(
-                new LoginByPhonePasswordParam("13188888888", "test"));
         Assert.notBlank(authenticationResult.getAccessToken());
     }
 

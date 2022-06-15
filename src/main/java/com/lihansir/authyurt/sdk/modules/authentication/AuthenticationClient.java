@@ -23,11 +23,11 @@ import java.util.Map;
 public class AuthenticationClient extends BaseClient {
 
     /**
-     * 用户名密码登录
+     * 账户密码登录
      */
-    public AuthenticationResult loginByUsername(LoginByUsernameParam param) {
+    public AuthenticationResult loginByAccount(LoginByAccountParam param) {
         param.setPassword(encrypt(param.getPassword()));
-        return basePost(CommonConstant.IDAAS_CONTEXT_PATH + "/api/authentication/loginByUsername", param, AuthenticationResult.class);
+        return basePost(CommonConstant.IDAAS_CONTEXT_PATH + "/api/authentication/loginByAccount", param, AuthenticationResult.class);
     }
 
     /**
@@ -36,14 +36,6 @@ public class AuthenticationClient extends BaseClient {
     public AuthenticationResult loginByLdap(LoginByLdapParam param) {
         param.setPassword(encrypt(param.getPassword()));
         return basePost(CommonConstant.IDAAS_CONTEXT_PATH + "/api/authentication/loginByLdap", param, AuthenticationResult.class);
-    }
-
-    /**
-     * 邮箱密码登录
-     */
-    public AuthenticationResult loginByEmail(LoginByEmailParam param) {
-        param.setPassword(encrypt(param.getPassword()));
-        return basePost(CommonConstant.IDAAS_CONTEXT_PATH + "/api/authentication/loginByEmail", param, AuthenticationResult.class);
     }
 
     /**
@@ -58,14 +50,6 @@ public class AuthenticationClient extends BaseClient {
      */
     public AuthenticationResult loginByPhoneCode(LoginByPhoneCodeParam param) {
         return basePost(CommonConstant.IDAAS_CONTEXT_PATH + "/api/authentication/loginByPhone", param, AuthenticationResult.class);
-    }
-
-    /**
-     * 手机号密码登录
-     */
-    public AuthenticationResult loginByPhonePassword(LoginByPhonePasswordParam param) {
-        param.setPassword(encrypt(param.getPassword()));
-        return basePost(CommonConstant.IDAAS_CONTEXT_PATH + "/api/authentication/loginByPhoneWithPassword", param, AuthenticationResult.class);
     }
 
     /**
