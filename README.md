@@ -18,6 +18,24 @@ authenticationClient.setApplicationId("APPLICATION_ID");
 AuthenticationResult authenticationResult = authenticationClient.loginByLdap(new LoginByLdapParam("test", "test"));
 ```
 
+### 用户名密码登录
+
+```java
+AuthenticationClient authenticationClient = new AuthenticationClient();
+authenticationClient.setUserPoolId("USER_POOL_ID");
+authenticationClient.setApplicationId("APPLICATION_ID");
+AuthenticationResult authenticationResult = authenticationClient.loginByUsername(new LoginByUsernameParam("test", "test"));
+```
+
+### 邮箱密码登录
+
+```java
+AuthenticationClient authenticationClient = new AuthenticationClient();
+authenticationClient.setUserPoolId("USER_POOL_ID");
+authenticationClient.setApplicationId("APPLICATION_ID");
+AuthenticationResult authenticationResult = authenticationClient.LoginByEmailParam(new LoginByEmailParam("test@lihansir.com", "test"));
+```
+
 ### 邮箱验证码登录
 
 ```java
@@ -26,6 +44,16 @@ authenticationClient.setUserPoolId("USER_POOL_ID");
 authenticationClient.setApplicationId("APPLICATION_ID");
 AuthenticationResult authenticationResult = authenticationClient.loginByEmailCode(new LoginByEmailCodeParam("test@lihansir.com", "1234"));
 ```
+
+### 手机号密码登录
+
+```java
+AuthenticationClient authenticationClient = new AuthenticationClient();
+authenticationClient.setUserPoolId("USER_POOL_ID");
+authenticationClient.setApplicationId("APPLICATION_ID");
+AuthenticationResult authenticationResult = authenticationClient.loginByPhonePassword(new LoginByPhonePasswordParam("13188888888", "test"));
+```
+
 
 ### 手机号验证码登录
 

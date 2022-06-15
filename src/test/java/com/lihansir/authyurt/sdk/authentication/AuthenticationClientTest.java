@@ -40,9 +40,29 @@ public class AuthenticationClientTest {
     }
 
     @Test
+    public void loginByUsername() {
+        AuthenticationResult authenticationResult = this.authenticationClient.loginByUsername(new LoginByUsernameParam("test", "test"));
+        Assert.notBlank(authenticationResult.getAccessToken());
+    }
+
+    @Test
+    public void loginByEmail() {
+        AuthenticationResult authenticationResult = this.authenticationClient.loginByEmail(
+                new LoginByEmailParam("test@lihansir.com", "test"));
+        Assert.notBlank(authenticationResult.getAccessToken());
+    }
+
+    @Test
     public void loginByEmailCode() {
         AuthenticationResult authenticationResult = this.authenticationClient.loginByEmailCode(
                 new LoginByEmailCodeParam("test@lihansir.com", "1234"));
+        Assert.notBlank(authenticationResult.getAccessToken());
+    }
+
+    @Test
+    public void loginByPhonePassword() {
+        AuthenticationResult authenticationResult = this.authenticationClient.loginByPhonePassword(
+                new LoginByPhonePasswordParam("13188888888", "test"));
         Assert.notBlank(authenticationResult.getAccessToken());
     }
 

@@ -39,10 +39,34 @@ public class AuthenticationClient extends BaseClient {
     }
 
     /**
+     * 用户名密码登录
+     */
+    public AuthenticationResult loginByUsername(LoginByUsernameParam param) {
+        param.setPassword(encrypt(param.getPassword()));
+        return basePost(CommonConstant.IDAAS_CONTEXT_PATH + "/api/authentication/loginByUsername", param, AuthenticationResult.class);
+    }
+
+    /**
+     * 邮箱密码登录
+     */
+    public AuthenticationResult loginByEmail(LoginByEmailParam param) {
+        param.setPassword(encrypt(param.getPassword()));
+        return basePost(CommonConstant.IDAAS_CONTEXT_PATH + "/api/authentication/loginByEmail", param, AuthenticationResult.class);
+    }
+
+    /**
      * 邮箱验证码登录
      */
     public AuthenticationResult loginByEmailCode(LoginByEmailCodeParam param) {
         return basePost(CommonConstant.IDAAS_CONTEXT_PATH + "/api/authentication/loginByEmailCode", param, AuthenticationResult.class);
+    }
+
+    /**
+     * 手机号密码登录
+     */
+    public AuthenticationResult loginByPhonePassword(LoginByPhonePasswordParam param) {
+        param.setPassword(encrypt(param.getPassword()));
+        return basePost(CommonConstant.IDAAS_CONTEXT_PATH + "/api/authentication/loginByPhoneWithPassword", param, AuthenticationResult.class);
     }
 
     /**
