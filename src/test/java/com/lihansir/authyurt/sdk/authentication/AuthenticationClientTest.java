@@ -2,9 +2,9 @@ package com.lihansir.authyurt.sdk.authentication;
 
 import cn.hutool.core.lang.Assert;
 import com.lihansir.authyurt.sdk.common.TestCommonConstant;
+import com.lihansir.authyurt.sdk.enums.MessageTemplateType;
 import com.lihansir.authyurt.sdk.enums.ResponseType;
 import com.lihansir.authyurt.sdk.enums.VerificationCodePlatform;
-import com.lihansir.authyurt.sdk.enums.VerificationCodeType;
 import com.lihansir.authyurt.sdk.model.*;
 import com.lihansir.authyurt.sdk.modules.authentication.AuthenticationClient;
 import org.junit.Before;
@@ -93,7 +93,7 @@ public class AuthenticationClientTest {
 
     @Test
     public void sendCaptcha() {
-        this.authenticationClient.sendCaptcha("13188888888", VerificationCodePlatform.PHONE, VerificationCodeType.LOGIN);
+        this.authenticationClient.sendCaptcha("13188888888", VerificationCodePlatform.PHONE, MessageTemplateType.LOGIN_VERIFY_CODE);
     }
 
     @Test

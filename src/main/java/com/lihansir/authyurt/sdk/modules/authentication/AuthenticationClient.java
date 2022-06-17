@@ -107,7 +107,7 @@ public class AuthenticationClient extends BaseClient {
      * @param platform 发送平台
      * @param type     验证码类型
      */
-    public void sendCaptcha(String target, VerificationCodePlatform platform, VerificationCodeType type) {
+    public void sendCaptcha(String target, VerificationCodePlatform platform, MessageTemplateType type) {
         Map<String, Object> param = new HashMap<>(3);
         param.put("identifier", target);
         param.put("platform", platform.getType());

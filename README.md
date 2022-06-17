@@ -97,7 +97,7 @@ AuthenticationResult authenticationResult = authenticationClient.registerByPhone
 AuthenticationClient authenticationClient = new AuthenticationClient();
 authenticationClient.setUserPoolId("USER_POOL_ID");
 authenticationClient.setApplicationId("APPLICATION_ID");
-authenticationClient.sendCaptcha("13188888888", VerificationCodePlatform.PHONE, VerificationCodeType.LOGIN);
+authenticationClient.sendCaptcha("13188888888", VerificationCodePlatform.PHONE, MessageTemplateType.LOGIN_VERIFY_CODE);
 ```
 
 ### 生成 OIDC 授权链接
