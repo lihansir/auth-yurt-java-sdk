@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 /**
  * 用户信息
  *
@@ -167,6 +169,31 @@ public class User {
      * 第三方 ID（用于关联原系统 ID）
      */
     private String externalId;
+
+    /**
+     * 三方平台 ID（即用户所归属的三方平台 ID）
+     */
+    private String thirdPartyPlatformId;
+
+    /**
+     * 用户注册浏览器
+     */
+    private String browser;
+
+    /**
+     * 用户注册设备
+     */
+    private String device;
+
+    /**
+     * 用户注册方式
+     */
+    private List<String> registerSource;
+
+    /**
+     * 用户的机密信息，例如其他系统的密码
+     */
+    private String secretInfo;
 
     public Long gmtCreate;
 

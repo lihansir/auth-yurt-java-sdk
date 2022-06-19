@@ -1,5 +1,6 @@
 package com.lihansir.authyurt.sdk.model;
 
+import com.lihansir.authyurt.sdk.enums.LoginFailStrategy;
 import com.lihansir.authyurt.sdk.enums.UserPoolPackageType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -108,6 +109,37 @@ public class UserPool {
      * 自定义密码强度。仅 passwordStrength 为 2 时生效
      */
     private CustomPasswordStrength customPasswordStrength;
+
+    /**
+     * 允许用户自助解锁
+     * 只有绑定了手机号/邮箱的用户才可以自助解锁
+     */
+    private Boolean enableSelfUnlock;
+
+    /**
+     * 频繁注册配置
+     */
+    private FrequentRegisterCheckConfig frequentRegisterCheck;
+
+    /**
+     * 登录密码错误限制
+     */
+    private LoginPasswordFailCheckConfig loginPasswordFailCheck;
+
+    /**
+     * 登录失败次数限制
+     */
+    private LoginFailCheckConfig loginFailCheck;
+
+    /**
+     * 密码轮换策略
+     */
+    private PasswordUpdatePolicyConfig passwordUpdatePolicy;
+
+    /**
+     * 登录安全策略
+     */
+    private LoginFailStrategy loginFailStrategy;
 
     public Long gmtCreate;
 

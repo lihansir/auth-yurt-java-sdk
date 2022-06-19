@@ -56,6 +56,11 @@ public class Org {
      */
     private String parentOrgId;
 
+    /**
+     * 三方平台 ID（即机构所归属的三方平台 ID）
+     */
+    private String thirdPartyPlatformId;
+
     public Long gmtCreate;
 
     public Long gmtModified;
