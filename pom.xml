@@ -6,7 +6,7 @@
 
     <groupId>com.lihansir.platform</groupId>
     <artifactId>auth-yurt-java-sdk</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 
     <name>${project.artifactId}</name>
     <url>https://github.com/lihansir/auth-yurt-java-sdk</url>
@@ -138,6 +138,20 @@
         </plugins>
     </build>
 
+    <repositories>
+        <repository>
+            <id>aliyun-flow</id>
+            <name>aliyun-flow</name>
+            <url>https://packages.aliyun.com/maven/repository/2133896-release-y0SuPm</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <profiles>
         <profile>
             <id>oss</id>
@@ -209,6 +223,40 @@
                     <name>Oss Snapshot Repository</name>
                     <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
                 </repository>
+            </distributionManagement>
+        </profile>
+        <profile>
+            <id>aliyun-flow</id>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-gpg-plugin</artifactId>
+                            <version>1.5</version>
+                            <executions>
+                                <execution>
+                                    <phase>verify</phase>
+                                    <goals>
+                                        <goal>sign</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+            <distributionManagement>
+                <repository>
+                    <id>aliyun-flow</id>
+                    <name>aliyun-flow</name>
+                    <url>https://packages.aliyun.com/maven/repository/2133896-release-y0SuPm</url>
+                </repository>
+                <snapshotRepository>
+                    <id>aliyun-flow</id>
+                    <name>aliyun-flow</name>
+                    <url>https://packages.aliyun.com/maven/repository/2133896-snapshot-6EceL0</url>
+                </snapshotRepository>
             </distributionManagement>
         </profile>
     </profiles>

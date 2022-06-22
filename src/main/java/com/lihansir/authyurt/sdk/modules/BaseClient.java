@@ -28,7 +28,7 @@ public abstract class BaseClient {
     /**
      * 服务地址，可选参数
      */
-    private String host = "https://core.authyurt.lihansir.com";
+    private String host = "https://core.authyurt.com";
 
     /**
      * 公钥

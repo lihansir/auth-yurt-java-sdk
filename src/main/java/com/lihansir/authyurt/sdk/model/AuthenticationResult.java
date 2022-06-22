@@ -24,6 +24,10 @@ public class AuthenticationResult {
 
     private String refreshToken;
 
+    private String scope;
+
+    private String rejectedScope;
+
     private Long expiresIn;
 
     private Map<String, Object> ext;

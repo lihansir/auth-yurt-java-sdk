@@ -24,6 +24,8 @@ public class AccessToken {
 
     private String scope;
 
+    private String rejectedScope;
+
     private String tokenType;
 
     private Long expiresIn;
