@@ -1,3 +1,12 @@
+## Maven 项目依赖
+```xml
+<dependency>
+    <groupId>com.lihansir.platform</groupId>
+    <artifactId>auth-yurt-java-sdk</artifactId>
+    <version>1.0.2</version>
+</dependency>
+```
+
 ## 认证客户端 AuthenticationClient
 
 ### 账户密码登录
