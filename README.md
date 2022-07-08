@@ -1,3 +1,8 @@
+# AuthYurt 身份认证平台 Java SDK
+
+### AuthYurt 控制台地址：https://console.authyurt.com
+
+
 ## Maven 项目依赖
 ```xml
 <dependency>
